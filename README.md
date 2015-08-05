@@ -1,6 +1,6 @@
 ## FWRD.in
 
-For when you need to transparently 302 redirect social bots to original content, yet want record pageviews in GA.
+For when you need to transparently 302 redirect social bots to original content, yet want to record pageviews in GA.
 
 ### Usage
 
