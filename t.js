@@ -28,7 +28,7 @@ $(function(){
           'utm_content='  + document.getElementById('content').value.replace(/\s+/g, '+')
         ].join('&');
       } else {
-        text = 'https://fwrd.in/t.php?' +
+        text = 'http://fwrd.in/t.php?' +
         [
           'ua='           + document.getElementById('ua').value.replace(/\s+/g, '+'),
           'utm_campaign=' + document.getElementById('campaign').value.replace(/\s+/g, '+'),
