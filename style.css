@@ -1,113 +1,142 @@
 .container {
-	margin-top: 10px;
-	border: 1px solid #e1e1e1;
-	box-shadow: 3px 3px 5px rgba(0,0,0,.1), -3px -3px 5px rgba(0,0,0,.1), -3px 3px 5px rgba(0,0,0,.1), 3px -3px 5px rgba(0,0,0,.1);
+  margin-top: 10px;
+  border: 1px solid #e1e1e1;
+  box-shadow: 3px 3px 5px rgba(0,0,0,.1), -3px -3px 5px rgba(0,0,0,.1), -3px 3px 5px rgba(0,0,0,.1), 3px -3px 5px rgba(0,0,0,.1);
 }
 .row {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 #header {
-	background-color: #29aaef;
-	color: #FFFFFF;
+  background-color: #29aaef;
+  color: #FFFFFF;
 }
 #header h3 {
-	text-transform: uppercase;
-	font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
 }
 #header h3 span {
-	font-weight: 200;
+  font-weight: 200;
 }
 #danger {
-	display: none;
+  display: none;
 }
 #gen {
-	text-align: center;
-	display: none;
-	position: relative;
+  text-align: center;
+  display: none;
+  position: relative;
+}
+#genshort {
+  text-align: center;
+  display: none;
+  position: relative;
 }
 #copy-button {
-	font-weight: 700;
-	font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
-	position: absolute;
-	display: none;
-	top: 5px;
-	right: 5px;
-	cursor: pointer;
-	text-transform: uppercase;
-	border: 2px solid #29aaef;
-	border-radius: 20px;
-	background-color: #fff;
-	color: #29aaef;
-	font-size: 13px;
-	padding: 2px 10px;
-	transition: border-radius .15s ease-out,
-							border-color  .15s ease-out,
-							color 				.15s ease-out
+  font-weight: 700;
+  font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  display: none;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 2px solid #29aaef;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #29aaef;
+  font-size: 13px;
+  padding: 2px 10px;
+  transition: border-radius .15s ease-out,
+              border-color  .15s ease-out,
+              color         .15s ease-out
+}
+#copy-button-short {
+  font-weight: 700;
+  font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  display: none;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 2px solid #29aaef;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #29aaef;
+  font-size: 13px;
+  padding: 2px 10px;
+  transition: border-radius .15s ease-out,
+              border-color  .15s ease-out,
+              color         .15s ease-out
 }
 #copy-button:hover {
-	border-color: orange !important;
-	border-radius: 2px !important;
-	color: orange !important;
+  border-color: orange !important;
+  border-radius: 2px !important;
+  color: orange !important;
+}
+#copy-button-short:hover {
+  border-color: orange !important;
+  border-radius: 2px !important;
+  color: orange !important;
 }
 .helper-text p {
-	font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 17px;
-	font-weight: 300;
-	color: #555;
+  font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: #555;
 }
 /*Break heading*/
 .bh1 {
-	text-transform: uppercase;
-	font-weight: 700;
-	font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #29aaef;
-	font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #29aaef;
+  font-size: 20px;
 }
 .bh2 {
-	text-transform: uppercase;
-	font-weight: 300;
-	font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #29aaef;
-	font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #29aaef;
+  font-size: 20px;
 }
 .center-break {
-	width: 43%;
-	text-align: center;
+  width: 43%;
+  text-align: center;
 }
 .left-break, .right-break, .center-break {
-	display: inline-block;
+  display: inline-block;
 }
 .left-break, .right-break {
-	border-top: 1px solid #e1e1e1;
-	width: 25%;
-	height: 8px;
+  border-top: 1px solid #e1e1e1;
+  width: 25%;
+  height: 8px;
 }
 .table tr:first-of-type td {
-	border-top: 0px solid transparent;
+  border-top: 0px solid transparent;
 }
 /*Fancy buttons*/
 .btn-mine {
-	border: 2px solid #29aaef;
-	border-radius: 20px;
-	background-color: #fff;
-	text-transform: uppercase;
-	color: #29aaef;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: bold;
+  border: 2px solid #29aaef;
+  border-radius: 20px;
+  background-color: #fff;
+  text-transform: uppercase;
+  color: #29aaef;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
 
-	transition: border-radius .15s ease-out,
-							border-color  .15s ease-out,
-							color 				.15s ease-out
+  transition: border-radius .15s ease-out,
+              border-color  .15s ease-out,
+              color         .15s ease-out
 }
 .btn-mine:hover {
-	border-color: orange !important;
-	border-radius: 2px !important;
-	color: orange !important;
+  border-color: orange !important;
+  border-radius: 2px !important;
+  color: orange !important;
 }
 /*Validation Sweetness*/
 .has-feedback .feedback-left, .has-feedback .feedback-right {
-	border-radius: 2px;
+  border-radius: 2px;
   height: 3px;
   margin-top: 15px;
   width: 20px;
@@ -117,21 +146,21 @@
 }
 /*Errors*/
 .has-feedback.has-error .feedback-left {
-	background-color: #CF1F13;
-	border-color: #CF1F13;
+  background-color: #CF1F13;
+  border-color: #CF1F13;
   transform: rotate(45deg);
 }
 .has-feedback.has-error .feedback-right {
-	background-color: #CF1F13;
-	border-color: #CF1F13;
+  background-color: #CF1F13;
+  border-color: #CF1F13;
   transform: rotate(-45deg);
 }
 /*Success*/
 .has-success .form-control, .has-success .form-control:focus {
-	border-color: #12cf1e;
+  border-color: #12cf1e;
 }
 .has-feedback.has-success .feedback-left {
-	background-color: #12CF1E;
+  background-color: #12CF1E;
   border-color: #12CF1E;
   margin-left: 1px;
   margin-top: 19px;
@@ -139,7 +168,7 @@
   width: 12px;
 }
 .has-feedback.has-success .feedback-right {
-	background-color: #12CF1E;
+  background-color: #12CF1E;
   border-color: #12CF1E;
   margin-left: 5px;
   transform: rotate(125deg);
