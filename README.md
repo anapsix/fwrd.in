@@ -20,6 +20,10 @@ php:
 
 ### Docker
 
+[![](https://badge.imagelayers.io/anapsix/fwrd.in:latest.svg)](https://imagelayers.io/?images=anapsix/fwrd.in:latest)
+
+[![](https://img.shields.io/badge/docker%20hub-ready-green.svg?style=flat-square)](https://hub.docker.com/r/anapsix/fwrd.in/)
+
 run:
 
     docker pull anapsix/fwrd.in
