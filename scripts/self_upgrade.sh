@@ -3,6 +3,7 @@
 echo "[INFO]: upgrading FWRD.in" >&2
 
 RUNNING="$(docker inspect -f '{{ .State.Running }}' fwrd.in 2>/dev/null)"
+OLD_IMAGE="$(docker images | awk '/anapsix\/fwrd.in.+latest/ {print $3}')"
 
 set -e -o pipefail 
 if docker pull anapsix/fwrd.in | grep Status: | grep -q "newer image"; then
@@ -18,6 +19,12 @@ if docker pull anapsix/fwrd.in | grep Status: | grep -q "newer image"; then
     echo -n "[INFO]: starting new image version.." >&2
     if docker run -d --name fwrd.in -p 8080:8080 anapsix/fwrd.in 2>/dev/null; then
       echo " ok" >&2
+      if [ -n "$OLD_IMAGE" ]; then
+        echo -n "[INFO]: cleaning up old image.." >&2
+        if docker rmi $OLD_IMAGE 2>/dev/null; then
+          echo " ok" >&2
+        fi
+      fi
     else
       echo " failed" >&2
       exit 1
