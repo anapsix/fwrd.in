@@ -30,6 +30,12 @@ build:
 
     docker build --no-cache -t fwrd.in github.com/anapsix/fwrd.in
 
+### Supported Social Media Platforms
+
+- Facebook
+- Twitter
+- LinkedIn
+- Google+
 
 ### Credits
 
