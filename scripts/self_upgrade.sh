@@ -17,7 +17,7 @@ if docker pull anapsix/fwrd.in | grep Status: | grep -q "newer image"; then
       exit 1
     fi
     echo -n "[INFO]: starting new image version.." >&2
-    if docker run -d --name fwrd.in -p 8080:8080 anapsix/fwrd.in 2>/dev/null; then
+    if docker run -d --name fwrd.in -u nobody -p 8080:8080 anapsix/fwrd.in 2>/dev/null; then
       echo " ok" >&2
       if [ -n "$OLD_IMAGE" ]; then
         echo -n "[INFO]: cleaning up old image.." >&2
