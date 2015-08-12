@@ -1,0 +1,20 @@
+server {
+  listen 8080 default_server;
+  server_name _;
+          
+  root /app;
+  index index.html;
+
+  location = /t {
+    index t.html;
+    set $target 'http://www.fwrd.in/?no_target_provided';
+
+    if ($arg_target) {
+      set $target $arg_target;
+    }
+
+    if ($http_user_agent ~* "facebookexternalhit|Facebot|GoogleBot|LinkedInBot|Twitterbot") {
+      rewrite .* $target redirect;
+    }
+  }
+}

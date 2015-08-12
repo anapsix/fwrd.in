@@ -58,7 +58,7 @@ $(function(){
 //        text = u + args.join('&');
 //      } else {
       args.push('target=' + encodeURIComponent(document.getElementById('url').value));
-      text = service_url + '/t.php?' + args.join('&');
+      text = service_url + '/t?' + args.join('&');
 //      }
       bit_url(text);
       $("#copy-button").attr('data-clipboard-text', text);
