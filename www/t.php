@@ -14,6 +14,7 @@ if(preg_match($pattern,$agent)){
   <head>
     <title> </title>
     <meta name="robots" content="noindex, nofollow">
+
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -23,11 +24,17 @@ if(preg_match($pattern,$agent)){
       var target = document.location.href.match(/target=([^&]+)/) || [undefined, 'http://fwrd.in/?hello_stranger'];
       var ua = document.location.href.match(/ua=([^&]+)/);
 
-      ga('create', ua, 'auto');
-      ga('send', 'pageview', {
+      ga('create', ua[1], 'auto');
+      ga('create', 'UA-66089254-1' , 'auto', {'name':'internal'}); // FWRD.in usage tracking
+      ga('internal.send', 'pageview', {
         "hitCallback": function() {
-          window.location = decodeURIComponent(target[1]);
-        }
+         ga('send', 'pageview', {
+           "hitCallback": function() {
+             console.log("redirecting to" + decodeURIComponent(target[1]));
+             window.location = decodeURIComponent(target[1]);
+           }
+         });
+       }
       });
     </script>
   </head>
