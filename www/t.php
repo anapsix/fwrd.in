@@ -30,7 +30,7 @@ if(preg_match($pattern,$agent)){
         "hitCallback": function() {
          ga('send', 'pageview', {
            "hitCallback": function() {
-             console.log("redirecting to" + decodeURIComponent(target[1]));
+             console.log("redirecting to " + decodeURIComponent(target[1]));
              window.location = decodeURIComponent(target[1]);
            }
          });
