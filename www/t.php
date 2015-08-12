@@ -2,7 +2,7 @@
 
 $pattern = '/(facebookexternalhit|GoogleBot|Facebot|LinkedInBot|Twitterbot)/i';
 $agent   = filter_input(INPUT_SERVER, 'HTTP_USER_AGENT', FILTER_SANITIZE_ENCODED);
-$redir   = isset($_GET['target']) ? $_GET['target'] : 'https://www.fwrd.in/?hello_stranger';
+$redir   = isset($_GET['target']) ? $_GET['target'] : 'http://fwrd.in/?hello_stranger';
 if(preg_match($pattern,$agent)){
   header('Location:'.rawurldecode($redir));
   die();
