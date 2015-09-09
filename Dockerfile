@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:latest
 MAINTAINER Anastas Dancha <anapsix@random.io>
 RUN apk upgrade --update && \
     apk add nginx
