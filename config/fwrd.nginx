@@ -6,9 +6,9 @@ server {
   index index.html;
 
   location = /t {
-    index t.html;
-    set $target 'http://www.fwrd.in/?no_target_provided';
+    try_files /t.html =404;
 
+    set $target 'http://www.fwrd.in/?no_target_provided';
     if ($arg_target) {
       set $target $arg_target;
     }
