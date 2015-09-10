@@ -5,8 +5,13 @@ server {
   root /app;
   index index.html;
 
-  location = /t {
-    try_files /t.html =404;
+  error_page 404 /404.html;
+  location = /404.html {
+    internal;
+  }
+
+  location /t {
+    try_files t.html =404;
 
     set $target 'http://www.fwrd.in/?no_target_provided';
     if ($arg_target) {
