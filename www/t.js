@@ -18,6 +18,9 @@ function bit_url(url) {
 
 $(function(){
 
+  // If a Google Analytics UA is set, use it.
+  if (window.GA_TRACKING_ID && window.GA_TRACKING_ID !== '') $("#ua").val(GA_TRACKING_ID);
+
   // Copy button functionality
   var copy = new ZeroClipboard( document.getElementById("copy-button") );
   copy.on( "ready", function( readyEvent ) {
