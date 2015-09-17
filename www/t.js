@@ -44,22 +44,14 @@ $(function(){
       $("#danger").hide();
       service_url = location.protocol+'//'+location.host
       args = [
-        'ua='           + document.getElementById('ua').value.replace(/\s+/g, '+'),
-        'utm_campaign=' + document.getElementById('campaign').value.replace(/\s+/g, '+'),
-        'utm_source='   + document.getElementById('source').value.replace(/\s+/g, '+'),
-        'utm_medium='   + document.getElementById('medium').value.replace(/\s+/g, '+'),
-        'utm_content='  + document.getElementById('content').value.replace(/\s+/g, '+')
+        'ua='           + encodeURIComponent(document.getElementById('ua').value),
+        'utm_campaign=' + encodeURIComponent(document.getElementById('campaign').value),
+        'utm_source='   + encodeURIComponent(document.getElementById('source').value),
+        'utm_medium='   + encodeURIComponent(document.getElementById('medium').value),
+        'utm_content='  + encodeURIComponent(document.getElementById('content').value),
+        'target='       + encodeURIComponent(document.getElementById('url').value)
       ];
-// there is hardly any reason to avoid using the client-side redirect, since it's so fast.
-//      // If it is our same domain URL (e.g. http://fwrd.in/about), just add utm params.
-//      if ($("#url").val().indexOf(location.host) !== -1) {
-//       u = document.getElementById('url').value;
-//        u = u.match(/\/$/) ? u+'?' : u+'/?';
-//        text = u + args.join('&');
-//      } else {
-      args.push('target=' + encodeURIComponent(document.getElementById('url').value));
       text = service_url + '/t.php?' + args.join('&');
-//      }
       bit_url(text);
       $("#copy-button").attr('data-clipboard-text', text);
       //$("#copy-button-short").attr('data-clipboard-text', document.getElementById("genshort").getElementsByTagName("span")[0].innerHTML );
