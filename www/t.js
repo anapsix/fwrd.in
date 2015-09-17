@@ -45,7 +45,6 @@ $(function(){
     onSuccess : function() {
       var text, u, args, service_url;
       $("#danger").hide();
-<<<<<<< HEAD
       service_url = location.protocol+'//'+location.host
       args = [
         'ua='           + encodeURIComponent(document.getElementById('ua').value),
@@ -58,7 +57,6 @@ $(function(){
       text = service_url + '/t.php?' + args.join('&');
       // Wrap in Bitly if enabled.
       if (window.ENABLE_BITLY_TRACKING) bit_url(text);
-      bit_url(text);
       $("#copy-button").attr('data-clipboard-text', text);
       //$("#copy-button-short").attr('data-clipboard-text', document.getElementById("genshort").getElementsByTagName("span")[0].innerHTML );
       $("#gen span").text(text);
