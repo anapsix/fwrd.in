@@ -52,12 +52,13 @@ $(function(){
         u = u.match(/\/$/) ? u+'?' : u+'/?';
         text = u +
         [
-          'ua='           + encodeURIComponent(document.getElementById('ua').value),
           'utm_campaign=' + encodeURIComponent(document.getElementById('campaign').value),
           'utm_source='   + encodeURIComponent(document.getElementById('source').value),
           'utm_medium='   + encodeURIComponent(document.getElementById('medium').value),
           'utm_content='  + encodeURIComponent(document.getElementById('content').value)
         ].join('&');
+
+      // If its an external site, send it through the tracker.
       } else {
         text = 'http://' + BASE_DOMAIN + '/t.php?' +
         [
