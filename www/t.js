@@ -56,7 +56,7 @@ $(function(){
           'utm_content='  + encodeURIComponent(document.getElementById('content').value)
         ].join('&');
       } else {
-        text = 'http://fwrd.in/t.php?' +
+        text = 'http://' + BASE_DOMAIN + '/t.php?' +
         [
           'ua='           + encodeURIComponent(document.getElementById('ua').value),
           'utm_campaign=' + encodeURIComponent(document.getElementById('campaign').value),
@@ -66,7 +66,10 @@ $(function(){
           'target='       + encodeURIComponent(document.getElementById('url').value)
         ].join('&');
       }
-      bit_url(text);
+
+      // Wrap in Bitly if enabled.
+      if (window.ENABLE_BITLY_TRACKING) bit_url(text);
+
       $("#copy-button").attr('data-clipboard-text', text);
       //$("#copy-button-short").attr('data-clipboard-text', document.getElementById("genshort").getElementsByTagName("span")[0].innerHTML );
       $("#gen span").text(text);
