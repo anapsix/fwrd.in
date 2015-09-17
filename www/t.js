@@ -42,26 +42,27 @@ $(function(){
     onSuccess : function() {
       var text, u;
       $("#danger").hide();
-      // If it IS a FWRD.in URL, just add utm params.
-      if ($("#url").val().indexOf('://fwrd.in') !== -1) {
+
+      // If the URL provided matches the BASE_DOMAIN, just append utms
+      if ($("#url").val().indexOf(BASE_DOMAIN) !== -1) {
         u = document.getElementById('url').value;
         u = u.match(/\/$/) ? u+'?' : u+'/?';
-        text = u + 
+        text = u +
         [
-          'ua='           + document.getElementById('ua').value.replace(/\s+/g, '+'),
-          'utm_campaign=' + document.getElementById('campaign').value.replace(/\s+/g, '+'),
-          'utm_source='   + document.getElementById('source').value.replace(/\s+/g, '+'),
-          'utm_medium='   + document.getElementById('medium').value.replace(/\s+/g, '+'),
-          'utm_content='  + document.getElementById('content').value.replace(/\s+/g, '+')
+          'ua='           + encodeURIComponent(document.getElementById('ua').value),
+          'utm_campaign=' + encodeURIComponent(document.getElementById('campaign').value),
+          'utm_source='   + encodeURIComponent(document.getElementById('source').value),
+          'utm_medium='   + encodeURIComponent(document.getElementById('medium').value),
+          'utm_content='  + encodeURIComponent(document.getElementById('content').value)
         ].join('&');
       } else {
         text = 'http://fwrd.in/t.php?' +
         [
-          'ua='           + document.getElementById('ua').value.replace(/\s+/g, '+'),
-          'utm_campaign=' + document.getElementById('campaign').value.replace(/\s+/g, '+'),
-          'utm_source='   + document.getElementById('source').value.replace(/\s+/g, '+'),
-          'utm_medium='   + document.getElementById('medium').value.replace(/\s+/g, '+'),
-          'utm_content='  + document.getElementById('content').value.replace(/\s+/g, '+'),
+          'ua='           + encodeURIComponent(document.getElementById('ua').value),
+          'utm_campaign=' + encodeURIComponent(document.getElementById('campaign').value),
+          'utm_source='   + encodeURIComponent(document.getElementById('source').value),
+          'utm_medium='   + encodeURIComponent(document.getElementById('medium').value),
+          'utm_content='  + encodeURIComponent(document.getElementById('content').value),
           'target='       + encodeURIComponent(document.getElementById('url').value)
         ].join('&');
       }
