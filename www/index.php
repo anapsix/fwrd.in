@@ -23,8 +23,9 @@ require_once('config.php');
     </script>
     <script>
     <?php
-      writeToJavascript('BASE_DOMAIN',    BASE_DOMAIN);
-      writeToJavascript('GA_TRACKING_ID', GA_TRACKING_ID);
+      writeToJavascript('BASE_DOMAIN',            BASE_DOMAIN);
+      writeToJavascript('GA_TRACKING_ID',         GA_TRACKING_ID);
+      writeToJavascript('ENABLE_BITLY_TRACKING',  ENABLE_BITLY_TRACKING);
     ?>
     </script>
   </head>
