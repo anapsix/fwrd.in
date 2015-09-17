@@ -1,0 +1,11 @@
+{
+    "name": "fwrd.in/external_link_tracker",
+    "description": "Interface and backend for tracking external links in Google Analytics",
+    "authors": [
+        {
+            "name": "Bill Huertas",
+            "email": "bill@billhuertas.com"
+        }
+    ],
+    "require": {}
+}
